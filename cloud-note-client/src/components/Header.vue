@@ -2,10 +2,10 @@
   <div class="header">
     <div class="header-content  w1170 clearfix">
       <div class="header-title fll">
-        <a href="">云笔记</a>
+        <a href="/">云笔记</a>
       </div>
       <div  class="btn-wrap flr">
-        <el-button>
+        <el-button @click="$router.push('/write')">
           写笔记
         </el-button>
       </div>
@@ -14,7 +14,7 @@
 </template>
 <script>
     export default {
-        name: "Header"
+
     }
 </script>
 

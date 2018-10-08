@@ -3,19 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var mongoose = require('mongoose')//引入mongoose模块
-mongoose.connect('mongodb://localhost/cloud_note',{ useNewUrlParser: true})//连接数据库
-
-var db = mongoose.connection;
-db.on('error',console.error.bind(console,'连接失败'));
-db.once('open', function() {
-    console.log('连接成功!')
-})
-
-var Router = require('./util/index');
+const mongooseConnect = require('./model/config')
+const router = require('./routes/index')
+const session = require('express-session')
 
 var app = express();
+
+app.use(session({
+    secret: 'long',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,8 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', Router);
-
+app.use(router)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

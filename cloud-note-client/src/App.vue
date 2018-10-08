@@ -20,8 +20,6 @@ body {
 }
 .w1170 {
   width: 1170px;
-}
-.content {
   margin: 0 auto;
 }
 .fll {
@@ -30,12 +28,13 @@ body {
 .flr {
   float: right;
 }
-clearfix::after {
+.clearfix::after {
   content: '';
+  display: block;
   width: 0;
   height: 0;
   clear: both;
-  display: block;
+
 }
 .mb30 {
   margin-bottom: 30px;

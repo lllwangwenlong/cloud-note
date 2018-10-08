@@ -1,23 +1,28 @@
 <template>
-    <div class="content clearfix">
-      <div class="fll">
+    <div class="w1170">
+      <div class="clearfix">
         <Banner></Banner>
-      </div>
-      <div class="flr">
         <UserBox></UserBox>
       </div>
+      <Article></Article>
     </div>
 </template>
 
 <script>
     import Banner from '@/components/Banner'
     import UserBox from '@/components/UserBox'
+    import Article from '@/components/Article'
     export default {
-      name: "index",
+      data() {
+        return {
+          content: []
+        }
+      },
       components: {
         Banner,
-        UserBox
-      }
+        UserBox,
+        Article
+      },
     }
 </script>
 

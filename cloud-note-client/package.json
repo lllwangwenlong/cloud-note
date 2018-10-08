@@ -13,10 +13,16 @@
     "axios": "^0.18.0",
     "element-ui": "^2.4.7",
     "node-sass": "^4.9.3",
+    "nprogress": "^0.2.0",
+    "quill-image-extend-module": "^1.1.2",
     "sass": "^1.14.1",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4",
+    "wangeditor": "^3.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
